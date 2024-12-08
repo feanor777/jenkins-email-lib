@@ -2,12 +2,13 @@ import io.max.DeployHelpers
 
 def call() {
     def podYaml = DeployHelpers.createPodYaml()
+    def podYaml2 = libraryResource("node_pod.yaml")
 
     pipeline {
         agent {
             kubernetes {
                 label "library-test"
-                yaml "${podYaml}"
+                yaml "${podYaml2}"
             }
         }
 
