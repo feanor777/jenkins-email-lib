@@ -1,4 +1,7 @@
-def call() {
+def call(String envName) {
+    if(envName == "STG") {
+        echo "Environment is ${envName}"
+    }
     def testVar = "test max"
 
     pipeline {
