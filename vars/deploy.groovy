@@ -12,8 +12,8 @@ def call() {
         }
 
         stages {
-            container("node") {
-                stage("Build") {
+            stage("Build") {
+                container("node") {
                     steps {
                         sh "npm --version"
                     }
