@@ -1,4 +1,4 @@
-package test.max
+package io.max
 
 class DeployHelpers implements Serializable {
     def createNodePodYaml() {

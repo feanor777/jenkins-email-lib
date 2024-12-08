@@ -1,4 +1,4 @@
-import test.max.DeployHelpers
+import io.max.DeployHelpers
 
 def call() {
     def yaml = (new DeployHelpers()).createNodePodYaml()
