@@ -1,4 +1,5 @@
-def call() {
+def call(String envName) {
+    verifyEnv(envName)
     def testVar = "test max"
 
     pipeline {
@@ -11,5 +12,14 @@ def call() {
                 }
             }
         }
+    }
+}
+
+private void verifyEnv(String envName) {
+    if (envName == "STG") {
+        echo "Environment is ${envName}"
+    } else if(envName == "PROD") {
+        currentBuild.result = 'ABORTED'
+        error('Stopping early because it is a PROD')
     }
 }
