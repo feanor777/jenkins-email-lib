@@ -1,7 +1,7 @@
 import io.max.DeployHelpers
 
 def call() {
-    def podYaml = (new DeployHelpers()).createPodYaml()
+    def podYaml = DeployHelpers.createPodYaml()
 
     pipeline {
         agent {
@@ -12,11 +12,14 @@ def call() {
         }
 
         stages {
-            stage("Build") {
-                steps {
-                    sh "npm --version"
+            container("node") {
+                stage("Build") {
+                    steps {
+                        sh "npm --version"
+                    }
                 }
             }
+
             stage("Test") {
                 steps {
                     test1()

@@ -1,7 +1,7 @@
 package io.max
 
 class DeployHelpers implements Serializable {
-    def createPodYaml() {
+    static def createPodYaml() {
         return """
 apiVersion: v1
 kind: Pod
