@@ -1,7 +1,7 @@
 import test.max.DeployHelpers
 
 def call() {
-    def yaml = new DeployHelpers().createNodePodYaml()
+    def yaml = (new DeployHelpers()).createNodePodYaml()
 
     pipeline {
         agent {
