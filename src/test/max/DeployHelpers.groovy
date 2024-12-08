@@ -1,6 +1,6 @@
 package test.max
 
-class DeployHelpers {
+class DeployHelpers implements Serializable {
     def createNodePodYaml() {
         return """
 apiVersion: v1
