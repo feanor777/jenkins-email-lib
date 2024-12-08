@@ -1,7 +1,7 @@
 import io.max.DeployHelpers
 
 def call() {
-    def podYaml = DeployHelpers.createPodYaml()
+    def podYaml = new DeployHelpers(this).createPodYaml()
 //    def podYaml2 = libraryResource("pods/node_pod.yaml")
 
     pipeline {
