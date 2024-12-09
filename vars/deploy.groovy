@@ -29,7 +29,7 @@ def call() {
                     container("node2") {
                         test1()
                         test2()
-                        dir('/documents') {
+                        dir('/private-docs') {
                             sh 'ls -l'
                             unstash 'max-test'
                             sh 'ls -l'

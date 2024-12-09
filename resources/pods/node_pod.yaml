@@ -17,7 +17,7 @@ spec:
       args:
         - "99d"
       volumeMounts:
-        - mountPath: "/documents"
+        - mountPath: "/private-docs"
           name: "node2-volume"
           readOnly: false
   volumes:
