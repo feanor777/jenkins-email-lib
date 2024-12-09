@@ -18,6 +18,8 @@ def call() {
                         sh "npm --version"
                         sh 'echo "Hello, World!" > file-max.txt'
                         sh 'ls -l'
+                        stash name: 'max-test', includes: '*.txt'
+                        sh 'ls -l'
                     }
                 }
             }
@@ -27,6 +29,8 @@ def call() {
                     container("node2") {
                         test1()
                         test2()
+                        sh 'ls -l'
+                        unstash 'max-test'
                         sh 'ls -l'
                     }
                 }
