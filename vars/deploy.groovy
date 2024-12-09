@@ -16,14 +16,19 @@ def call() {
                 steps {
                     container("node") {
                         sh "npm --version"
+                        sh 'echo "Hello, World!" > file-max.txt'
+                        sh 'ls -l'
                     }
                 }
             }
 
             stage("Test") {
                 steps {
-                    test1()
-                    test2()
+                    container("node2") {
+                        test1()
+                        test2()
+                        sh 'ls -l'
+                    }
                 }
             }
         }
