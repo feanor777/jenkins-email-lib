@@ -16,4 +16,10 @@ spec:
         - sleep
       args:
         - "99d"
-  restartPolicy: Never
+      volumeMounts:
+        - mountPath: "/documents"
+          name: "node2-volume"
+          readOnly: false
+  volumes:
+    - emptyDir: {}
+      name: "node2-volume"

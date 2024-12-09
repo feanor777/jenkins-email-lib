@@ -29,9 +29,11 @@ def call() {
                     container("node2") {
                         test1()
                         test2()
-                        sh 'ls -l'
-                        unstash 'max-test'
-                        sh 'ls -l'
+                        dir('/documents') {
+                            sh 'ls -l'
+                            unstash 'max-test'
+                            sh 'ls -l'
+                        }
                     }
                 }
             }
